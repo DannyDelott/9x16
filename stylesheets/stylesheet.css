@@ -101,6 +101,9 @@ header h2 {
 #downloads {
   margin-bottom: 40px;
 }
+.social {
+  padding-left: 25px;
+}
 
 a.button {
   display: block;
