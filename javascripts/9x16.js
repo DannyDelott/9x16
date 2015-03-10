@@ -14,9 +14,11 @@ $(function(){
   /* ******************
    * HELPER FUNCTIONS *
    * ******************/
-
-  var makeContainer = function(dimensions){
-    return '<div class="verticaljs" style="position:absolute;"></div>';
+  var makeVideoContainer = function(dimensions){
+    return '<div class="vjs-container" style="position:relative;height:' + dimensions[1] + 'px"></div>'; 
+  };
+  var makeOverlayContainer = function(dimensions){
+    return '<div class="vjs-overlay" style="position:absolute;"></div>';
   };
   var makeLeftBar = function(dimensions){
     return '<div style="position:absolute;left:0;width:' + dimensions[0]/3 + 'px;height:' + dimensions[1] + 'px;background-color:#000;z-index:300000;"></div>';
@@ -39,17 +41,21 @@ $(function(){
     var $vid = $(this);
     var dimensions = getDimensions($vid);
     
-    // creates a letterbox container
-    var container = makeContainer(dimensions); 
+    // creates video container
+    var container = makeVideoContainer(dimensions); 
+
+    // creates a letterbox overlay container
+    var overlay = makeOverlayContainer(dimensions); 
     
     // calculates the vertical dimensions
     var verticalRatio = (dimensions[1] / dimensions[0]);
 
     // add video to container
-    $vid.wrap(container); 
+    $vid.wrap(overlay); 
+    $('.vjs-overlay').wrap(container); 
 
-    $('.verticaljs').prepend(makeLeftBar(dimensions));
-    $('.verticaljs').prepend(makeRightBar(dimensions));
+    $('.vjs-overlay').prepend(makeLeftBar(dimensions));
+    $('.vjs-overlay').prepend(makeRightBar(dimensions));
   };
 
   /* ********************************************************
