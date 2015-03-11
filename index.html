@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="javascripts/9x16.js"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -62,16 +61,19 @@
           <pre><code>&lt;script src=&quot;http://dannydelott.github.io/9x16/javascripts/9x16.js&quot;&gt;&lt;/script&gt;</code></pre>
 
           <p>Last thing.  You can prevent a video from being letterboxed by adding any of the following classes to it.</p>
-          <pre><code></code></pre>
+          <pre><code>.no-please-no<br>.not-me-please<br>.oh-spare-me</code></pre>
           <p>Once your page loads, all of your HTML5 videos will be vertically letterboxed!</p> 
                     
           <hr>
 
           <h3>See it in action!</h3>
           <h4>Before...</h4>
+          <br>
           <video src="example.mp4" class="no-please-no" type="video/mp4" controls></video>
           <br>
+          <br>
           <h4>After...</h4>
+          <br>
           <video src="example.mp4" type="video/mp4" controls></video>
 
           <hr>
@@ -97,6 +99,7 @@
             } catch(err) {}
           </script>
 
+          <script src="javascripts/9x16.js"></script>
       </div>
     </div>
   </body>
