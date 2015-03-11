@@ -67,7 +67,12 @@ $(function(){
   var videos = Array.prototype.slice.call(document.getElementsByTagName('video')); 
 
   for(var i = 0; i < videos.length; i++){
-    videos[i].addEventListener('loadedmetadata', overlay);
+    var $vid = $(videos[i]);
+    if(!$vid.hasClass('no-please-no') && 
+       !($vid).hasClass('not-me-please') &&
+       !($vid).hasClass('oh-spare-me')){
+      videos[i].addEventListener('loadedmetadata', overlay);
+    }
   }
 
 });
